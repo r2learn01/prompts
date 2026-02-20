@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - R2 AI Prompts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* التنسيقات ثابتة كما طلبت */
+        :root { --bg-color: #0f172a; --card-bg: #1e293b; --text-color: #f8fafc; --accent-color: #8b5cf6; --accent-hover: #7c3aed; --border-color: #334155; --prompt-bg: #020617; --prompt-text: #a5b4fc; --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); }
+        [data-theme="light"] { --bg-color: #f1f5f9; --card-bg: #ffffff; --text-color: #1e293b; --accent-color: #6366f1; --accent-hover: #4f46e5; --border-color: #e2e8f0; --prompt-bg: #f8fafc; --prompt-text: #334155; --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        header { background-color: var(--card-bg); padding: 1rem 2rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.8rem; font-weight: 900; color: var(--accent-color); text-decoration: none; }
+        nav { display: flex; gap: 20px; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-color); font-weight: 700; }
+        .controls { display: flex; gap: 12px; }
+        button { padding: 10px 20px; cursor: pointer; border: 2px solid var(--border-color); background: var(--card-bg); color: var(--text-color); border-radius: 12px; font-family: 'Cairo', sans-serif; font-weight: 700; }
+        main { flex: 1; padding: 3rem 2rem; max-width: 1000px; margin: 0 auto; width: 100%; }
+        .section-title { text-align: center; margin-bottom: 2rem; font-size: 2.5rem; font-weight: 900; background: linear-gradient(to right, var(--accent-color), #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .content-body { line-height: 1.8; font-size: 1.1rem; background: var(--card-bg); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); }
+        .content-body h3 { color: var(--accent-color); font-weight: 900; margin-top: 1.5rem; }
+        footer { background-color: var(--card-bg); text-align: center; padding: 2rem; margin-top: auto; border-top: 1px solid var(--border-color); font-weight: 700; }
+        footer strong { color: var(--accent-color); }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Prompts Store</a>
+        <nav>
+            <a href="index.html" data-lang="home">Home</a>
+            <a href="about.html" data-lang="about">About Us</a>
+            <a href="privacy.html" data-lang="privacy">Privacy Policy</a>
+            <a href="https://r2-beige.vercel.app/" target="_blank" data-lang="company">R2 Website</a>
+        </nav>
+        <div class="controls">
+            <button id="theme-toggle">☀️ Light</button>
+            <button id="lang-toggle">العربية</button>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="section-title" data-lang="about_h">About R2 AI Prompts</h2>
+        <div class="content-body">
+            <h3 data-lang="who_title">Expertise Behind the Scenes</h3>
+            <p data-lang="who_p">R2 AI Prompts is not just a library of words; it is a specialized product of <strong>R2 Company</strong>, a leader in AI development and software solutions. At R2, we don't just use AI—we understand its architecture. Our deep knowledge of how Large Language Models (LLMs) and Diffusion models process data allows us to craft prompts that communicate effectively with the AI's core logic.</p>
+
+            <h3 data-lang="why_title">Why R2 Prompts are Different?</h3>
+            <p data-lang="why_p">Most prompts fail because they lack the technical nuance required to trigger specific high-fidelity details. Our team of engineers at R2 analyzes token weights and semantic patterns to ensure that every prompt in this store is optimized for realism, lighting, and complex composition. We bridge the gap between human imagination and machine execution.</p>
+
+            <h3 data-lang="mission_title">Our Mission</h3>
+            <p data-lang="mission_p">To provide professional-grade tools for creators, designers, and developers. Through R2 AI Prompts, we aim to standardize quality in the AI art industry, ensuring that realism and precision are accessible to everyone with a single click.</p>
+        </div>
+    </main>
+
+    <footer><p>&copy; All rights reserved | powered by <strong>R2</strong></p></footer>
+
+    <script>
+        const translations = {
+            en: {
+                home: "Home", about: "About Us", privacy: "Privacy Policy",
+                about_h: "About R2 AI Prompts",
+                who_title: "Expertise Behind the Scenes",
+                who_p: "R2 AI Prompts is not just a library of words; it is a specialized product of R2 Company, a leader in AI development and software solutions. At R2, we don't just use AI—we understand its architecture. Our deep knowledge of how Large Language Models (LLMs) and Diffusion models process data allows us to craft prompts that communicate effectively with the AI's core logic.",
+                why_title: "Why R2 Prompts are Different?",
+                why_p: "Most prompts fail because they lack the technical nuance required to trigger specific high-fidelity details. Our team of engineers at R2 analyzes token weights and semantic patterns to ensure that every prompt in this store is optimized for realism, lighting, and complex composition.",
+                mission_title: "Our Mission",
+                mission_p: "To provide professional-grade tools for creators, designers, and developers. Through R2 AI Prompts, we aim to standardize quality in the AI art industry.",
+                lang_btn: "العربية"
+            },
+            ar: {
+                home: "الرئيسية", about: "من نحن", privacy: "سياسة الخصوصية",
+                about_h: "حول R2 AI Prompts",
+                who_title: "الخبرة وراء الكواليس",
+                who_p: "موقع R2 AI Prompts ليس مجرد مكتبة للكلمات؛ بل هو منتج متخصص لشركة R2 الرائدة في تطوير حلول الذكاء الاصطناعي والبرمجيات. في R2، نحن لا نكتفي باستخدام الذكاء الاصطناعي بل نفهم هندسته المعمارية بعمق. معرفتنا بكيفية معالجة النماذج اللغوية (LLMs) ونماذج الانتشار (Diffusion) للبيانات تسمح لنا بصياغة برومبتات تتواصل بفعالية مع المنطق البرمجي للآلة.",
+                why_title: "ما الذي يميز برومبتات R2؟",
+                why_p: "تفشل معظم الأوامر لأنها تفتقر إلى الفروق التقنية الدقيقة المطلوبة لتحفيز تفاصيل عالية الدقة. يقوم مهندسونا في R2 بتحليل أوزان الرموز (Tokens) والأنماط الدلالية لضمان أن كل برومبت في هذا المتجر محسن للواقعية، الإضاءة، والتكوين المعقد.",
+                mission_title: "مهمتنا",
+                mission_p: "توفير أدوات احترافية للمبدعين والمصممين والمطورين. من خلال R2 AI Prompts، نهدف إلى توحيد معايير الجودة في صناعة فن الذكاء الاصطناعي، وضمان وصول الجميع للواقعية والدقة بضغطة زر واحدة.",
+                lang_btn: "English"
+            }
+        };
+
+        let currentLang = 'en';
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const elementsToTranslate = document.querySelectorAll('[data-lang]');
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            elementsToTranslate.forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if(translations[currentLang][key]) el.textContent = translations[currentLang][key];
+            });
+            langToggleBtn.textContent = translations[currentLang].lang_btn;
+        });
+
+        const themeBtn = document.getElementById('theme-toggle');
+        themeBtn.addEventListener('click', () => {
+            const isLight = document.body.getAttribute('data-theme') === 'light';
+            if (isLight) { document.body.removeAttribute('data-theme'); themeBtn.textContent = "☀️ Light"; }
+            else { document.body.setAttribute('data-theme', 'light'); themeBtn.textContent = "🌙 Dark"; }
+        });
+    </script>
+</body>
+</html>

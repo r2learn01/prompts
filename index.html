@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:description" content="Find the best AI edit prompts for Gemini, Nanobanana image generator, and other AI tools. Ready-to-use templates to improve image editing, content creation, and prompt performance.">
+    <meta name="description" content="Find the best AI edit prompts for Gemini, Nanobanana image generator, and other AI tools. Ready-to-use templates to improve image editing, content creation, and prompt performance.">
+
+    <title>R2 AI Prompts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* المتغيرات (الوضع الافتراضي هو الداكن الآن) */
+        :root {
+            --bg-color: #0f172a;      /* خلفية داكنة زرقاء عصرية */
+            --card-bg: #1e293b;       /* لون الكارت داكن */
+            --text-color: #f8fafc;    /* نص أبيض */
+            --accent-color: #8b5cf6;  /* لون بنفسجي مشع */
+            --accent-hover: #7c3aed;
+            --border-color: #334155;
+            --prompt-bg: #020617;     /* خلفية البرومبت سوداء */
+            --prompt-text: #a5b4fc;   /* لون نص البرومبت */
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+        }
+
+        /* وضع الثيم الفاتح (Light Mode) - يتم تفعيله عند وجود الكلاس */
+        [data-theme="light"] {
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --accent-color: #6366f1;
+            --accent-hover: #4f46e5;
+            --border-color: #e2e8f0;
+            --prompt-bg: #f8fafc;
+            --prompt-text: #334155;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+        
+        body {
+            font-family: 'Cairo', sans-serif; /* الخط الجديد */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* الهيدر */
+        header {
+            background-color: var(--card-bg);
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo { 
+            font-size: 1.8rem; 
+            font-weight: 900; /* بولد جداً */
+            color: var(--accent-color); 
+            text-decoration: none; 
+            letter-spacing: 1px;
+        }
+
+        nav { display: flex; gap: 20px; align-items: center; }
+        
+        nav a { 
+            text-decoration: none; 
+            color: var(--text-color); 
+            font-weight: 700; /* بولد */
+            font-size: 1.1rem;
+        }
+        nav a:hover { color: var(--accent-color); transform: translateY(-2px); }
+
+        .controls { display: flex; gap: 12px; }
+        
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: 2px solid var(--border-color);
+            background: var(--card-bg);
+            color: var(--text-color);
+            border-radius: 12px;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+        }
+        button:hover { border-color: var(--accent-color); }
+
+        /* المحتوى الرئيسي */
+        main {
+            flex: 1;
+            padding: 3rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .section-title { 
+            text-align: center; 
+            margin-bottom: 3rem; 
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(to right, var(--accent-color), #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* كروت أعرض قليلاً */
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px; /* حواف دائرية أكثر */
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 220px;
+            background-color: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .card-content { padding: 20px; }
+
+        .card-title { margin-top: 0; font-size: 1.4rem; font-weight: 900; margin-bottom: 10px; }
+
+        .prompt-label { font-size: 0.9rem; opacity: 0.8; font-weight: 700; margin-bottom: 5px; display: block;}
+
+        .prompt-box {
+            background-color: var(--prompt-bg);
+            color: var(--prompt-text);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace; /* خط كود للبرومبت */
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .copy-btn {
+            width: 100%;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            font-size: 1rem;
+            padding: 12px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .copy-btn:hover { 
+            background-color: var(--accent-hover); 
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: var(--card-bg);
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+            border-top: 1px solid var(--border-color);
+            font-weight: 700;
+            color: var(--text-color);
+        }
+        
+        footer strong { color: var(--accent-color); }
+        
+        /* الميديا كويري */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav { flex-wrap: wrap; justify-content: center; width: 100%; }
+            .controls { width: 100%; justify-content: center; margin-top: 10px;}
+            .section-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Prompts Store</a>
+        <nav>
+            <a href="index.html" data-lang="home">Home</a>
+            <a href="about.html" data-lang="about">About Us</a>
+            <a href="privacy.html" data-lang="privacy">Privacy Policy</a>
+            <a href="https://r2-beige.vercel.app/" target="_blank" data-lang="company">R2 Website</a>
+        </nav>
+        <div class="controls">
+            <button id="theme-toggle" title="Switch Theme">☀️ Light</button>
+            <button id="lang-toggle">العربية</button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <h2 class="section-title" data-lang="latest_prompts">Latest Image Prompts</h2>
+        
+        <div class="grid-container" id="cards-container">
+            <div class="card">
+                <div class="card-image">IMG 01</div>
+                <div class="card-content">
+                    <h3 class="card-title">Neon Cyberpunk</h3>
+                    <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
+                    <div class="prompt-box">
+                        Hyper-realistic cyberpunk city street at night, neon lights, rain reflection, 8k resolution, cinematic lighting, unreal engine 5 render.
+                    </div>
+                    <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">IMG 02</div>
+                <div class="card-content">
+                    <h3 class="card-title">Vintage Portrait</h3>
+                    <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
+                    <div class="prompt-box">
+                        Close-up portrait of an elderly man with a detailed beard, natural light, bokeh background, shot on 85mm lens, vintage film grain style.
+                    </div>
+                    <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">IMG 03</div>
+                <div class="card-content">
+                    <h3 class="card-title">Magic Forest</h3>
+                    <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
+                    <div class="prompt-box">
+                        Enchanted forest with glowing mushrooms, fireflies, misty atmosphere, fantasy art style, vibrant green and purple colors, digital painting.
+                    </div>
+                    <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-image">IMG 04</div>
+                <div class="card-content">
+                    <h3 class="card-title">Minimal Vector</h3>
+                    <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
+                    <div class="prompt-box">
+                        Minimalist vector logo of a geometric fox head, flat design, orange and white palette, white background, adobe illustrator style.
+                    </div>
+                    <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; All rights reserved | powered by <strong>R2</strong> </p>
+    </footer>
+
+    <script>
+        // 1. الترجمة
+        const translations = {
+            en: {
+                home: "Home",
+                about: "About Us",
+                privacy: "Privacy Policy",
+                company: "R2 Company",
+                latest_prompts: "Latest Image Prompts",
+                prompt_label: "Prompt:",
+                copy_btn: "Copy Prompt",
+                empty_content: "Content coming soon...",
+                lang_btn: "العربية"
+            },
+            ar: {
+                home: "الرئيسية",
+                about: "من نحن",
+                privacy: "سياسة الخصوصية",
+                company: "شركة R2",
+                latest_prompts: "أحدث برومبتات الصور",
+                prompt_label: "البرومبت:",
+                copy_btn: "نسخ البرومبت",
+                empty_content: "المحتوى قادم قريباً...",
+                lang_btn: "English"
+            }
+        };
+
+        let currentLang = 'en';
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const elementsToTranslate = document.querySelectorAll('[data-lang]');
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            
+            elementsToTranslate.forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if(translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+            langToggleBtn.textContent = translations[currentLang].lang_btn;
+        });
+
+        // 2. الثيم (Dark Default)
+        const themeBtn = document.getElementById('theme-toggle');
+        
+        themeBtn.addEventListener('click', () => {
+            const isLight = document.body.getAttribute('data-theme') === 'light';
+            
+            if (isLight) {
+                document.body.removeAttribute('data-theme'); // العودة للداكن (الافتراضي)
+                themeBtn.textContent = "☀️ Light";
+            } else {
+                document.body.setAttribute('data-theme', 'light'); // تفعيل الفاتح
+                themeBtn.textContent = "🌙 Dark";
+            }
+        });
+
+        // 3. النسخ
+        function copyText(btn) {
+            const promptText = btn.previousElementSibling.innerText;
+            navigator.clipboard.writeText(promptText).then(() => {
+                const originalText = btn.textContent;
+                btn.textContent = currentLang === 'ar' ? "تم النسخ بنجاح!" : "Copied Successfully!";
+                btn.style.backgroundColor = "#10b981"; // لون أخضر عند النسخ
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.backgroundColor = ""; // العودة للون الأصلي
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>

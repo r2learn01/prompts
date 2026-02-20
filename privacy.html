@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - R2 AI Prompts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #0f172a; --card-bg: #1e293b; --text-color: #f8fafc; --accent-color: #8b5cf6; --accent-hover: #7c3aed; --border-color: #334155; --prompt-bg: #020617; --prompt-text: #a5b4fc; --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); }
+        [data-theme="light"] { --bg-color: #f1f5f9; --card-bg: #ffffff; --text-color: #1e293b; --accent-color: #6366f1; --accent-hover: #4f46e5; --border-color: #e2e8f0; --prompt-bg: #f8fafc; --prompt-text: #334155; --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        * { box-sizing: border-box; transition: all 0.3s ease; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 0; display: flex; flex-direction: column; min-height: 100vh; }
+        header { background-color: var(--card-bg); padding: 1rem 2rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.8rem; font-weight: 900; color: var(--accent-color); text-decoration: none; }
+        nav { display: flex; gap: 20px; align-items: center; }
+        nav a { text-decoration: none; color: var(--text-color); font-weight: 700; }
+        .controls { display: flex; gap: 12px; }
+        button { padding: 10px 20px; cursor: pointer; border: 2px solid var(--border-color); background: var(--card-bg); color: var(--text-color); border-radius: 12px; font-family: 'Cairo', sans-serif; font-weight: 700; }
+        main { flex: 1; padding: 3rem 2rem; max-width: 1000px; margin: 0 auto; width: 100%; }
+        .section-title { text-align: center; margin-bottom: 2rem; font-size: 2.5rem; font-weight: 900; background: linear-gradient(to right, var(--accent-color), #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .content-body { line-height: 1.8; font-size: 1.1rem; background: var(--card-bg); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color); }
+        .content-body h3 { color: var(--accent-color); font-weight: 900; margin-top: 1.5rem; }
+        footer { background-color: var(--card-bg); text-align: center; padding: 2rem; margin-top: auto; border-top: 1px solid var(--border-color); font-weight: 700; }
+        footer strong { color: var(--accent-color); }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Prompts Store</a>
+        <nav>
+            <a href="index.html" data-lang="home">Home</a>
+            <a href="about.html" data-lang="about">About Us</a>
+            <a href="privacy.html" data-lang="privacy">Privacy Policy</a>
+            <a href="https://r2-beige.vercel.app/" target="_blank" data-lang="company">R2 Website</a>
+        </nav>
+        <div class="controls">
+            <button id="theme-toggle">☀️ Light</button>
+            <button id="lang-toggle">العربية</button>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="section-title" data-lang="priv_h">Privacy Policy & Terms of Use</h2>
+        <div class="content-body">
+            <p data-lang="intro"><strong>Welcome to R2 AI Prompts. We believe in a frictionless and secure experience. Our platform is designed to be used without the need for registration, and we do not collect personal information. This policy outlines our simple approach to privacy and the acceptable use of our AI tools.</strong></p>
+
+            <h3 data-lang="t1">1. No Personal Data Collection</h3>
+            <p data-lang="p1">You can use R2 AI Prompts completely anonymously. There is no account creation process, and we do not ask for your name, email address, or any identifying information. We only temporarily process the prompts you enter to generate the requested content, and these are not linked to any personal identity.</p>
+
+            <h3 data-lang="t2">2. Technical & Usage Data</h3>
+            <p data-lang="p2">To ensure the website runs smoothly, we may monitor general, non-identifiable technical metrics (such as site traffic, error rates, or device types). This helps our engineering team maintain the platform's stability and improve the quality of AI outputs, without tracking individual users.</p>
+
+            <h3 data-lang="t3">3. User Preferences (Cookies/Local Storage)</h3>
+            <p data-lang="p3">We use minimal local storage strictly to remember your interface preferences, such as your choice of language (Arabic/English) and theme (Light/Dark mode). We do not use tracking cookies or share any browsing data with advertising networks.</p>
+
+            <h3 data-lang="t4">4. Acceptable Use and Media Guidelines</h3>
+            <p data-lang="p4">We provide this AI tool to inspire creativity. However, users are strictly prohibited from using the platform to generate, manipulate, or distribute media for inappropriate, harmful, illegal, or deceptive purposes. This includes, but is not limited to, creating deepfakes, offensive material, hateful content, or violating intellectual property rights. Users bear full and sole responsibility for the content they generate and how they choose to use or publish it.</p>
+
+            <h3 data-lang="t5">5. Policy Updates</h3>
+            <p data-lang="p5">As our platform and AI technologies continue to evolve, we may update this policy occasionally to reflect new features or usage guidelines. Any changes will be published directly on this page.</p>
+        </div>
+    </main>
+
+    <footer><p>&copy; All rights reserved | powered by <strong data-lang="footer_r2">R2</strong></p></footer>
+
+    <script>
+        const translations = {
+            en: {
+                home: "Home", 
+                about: "About Us", 
+                privacy: "Privacy Policy",
+                company: "R2 Website",
+                priv_h: "Privacy Policy & Terms of Use",
+                intro: "<strong>Welcome to R2 AI Prompts. We believe in a frictionless and secure experience. Our platform is designed to be used without the need for registration, and we do not collect personal information. This policy outlines our simple approach to privacy and the acceptable use of our AI tools.</strong>",
+                t1: "1. No Personal Data Collection",
+                p1: "You can use R2 AI Prompts completely anonymously. There is no account creation process, and we do not ask for your name, email address, or any identifying information. We only temporarily process the prompts you enter to generate the requested content, and these are not linked to any personal identity.",
+                t2: "2. Technical & Usage Data",
+                p2: "To ensure the website runs smoothly, we may monitor general, non-identifiable technical metrics (such as site traffic, error rates, or device types). This helps our engineering team maintain the platform's stability and improve the quality of AI outputs, without tracking individual users.",
+                t3: "3. User Preferences (Cookies/Local Storage)",
+                p3: "We use minimal local storage strictly to remember your interface preferences, such as your choice of language (Arabic/English) and theme (Light/Dark mode). We do not use tracking cookies or share any browsing data with advertising networks.",
+                t4: "4. Acceptable Use and Media Guidelines",
+                p4: "We provide this AI tool to inspire creativity. However, users are strictly prohibited from using the platform to generate, manipulate, or distribute media for inappropriate, harmful, illegal, or deceptive purposes. This includes, but is not limited to, creating deepfakes, offensive material, hateful content, or violating intellectual property rights. Users bear full and sole responsibility for the content they generate and how they choose to use or publish it.",
+                t5: "5. Policy Updates",
+                p5: "As our platform and AI technologies continue to evolve, we may update this policy occasionally to reflect new features or usage guidelines. Any changes will be published directly on this page.",
+                footer_r2: "R2",
+                lang_btn: "العربية"
+            },
+            ar: {
+                home: "الرئيسية", 
+                about: "من نحن", 
+                privacy: "سياسة الخصوصية",
+                company: "موقع R2",
+                priv_h: "سياسة الخصوصية وشروط الاستخدام",
+                intro: "<strong>أهلاً بك في منصة R2 AI Prompts. نحن نؤمن بتجربة استخدام سلسة وآمنة، ولذلك تم تصميم منصتنا لتعمل بدون الحاجة لتسجيل دخول، ونحن لا نقوم بجمع أي بيانات شخصية. توضح هذه السياسة نهجنا البسيط تجاه الخصوصية وشروط الاستخدام المقبول لأدوات الذكاء الاصطناعي الخاصة بنا.</strong>",
+                t1: "1. عدم جمع البيانات الشخصية",
+                p1: "يمكنك استخدام المنصة بشكل مجهول تماماً. لا يوجد لدينا نظام لإنشاء الحسابات، ولا نطلب اسمك أو بريدك الإلكتروني أو أي معلومات تعريفية أخرى. نحن نقوم فقط بمعالجة النصوص (البرومبتات) التي تدخلها مؤقتاً لتوليد المحتوى المطلوب، ولا يتم ربطها بأي هوية شخصية.",
+                t2: "2. البيانات التقنية للاستخدام",
+                p2: "لضمان عمل الموقع بكفاءة، قد نقوم بمراقبة مقاييس تقنية عامة وغير محددة للهوية (مثل حجم الزيارات، معدلات الخطأ، أو نوع الأجهزة). يساعد ذلك فريقنا الهندسي على الحفاظ على استقرار المنصة وتحسين جودة المخرجات، دون تتبع المستخدمين كأفراد.",
+                t3: "3. تفضيلات المستخدم (التخزين المحلي)",
+                p3: "نستخدم مساحة تخزين محلية بسيطة فقط لتذكر تفضيلات واجهة المستخدم الخاصة بك، مثل اختيارك للغة (العربية/الإنجليزية) والمظهر (الداكن/الفاتح). نحن لا نستخدم ملفات تعريف الارتباط لأغراض التتبع ولا نشارك أي بيانات تصفح مع شبكات الإعلانات.",
+                t4: "4. الاستخدام المقبول وإرشادات المحتوى",
+                p4: "نحن نقدم هذه الأداة لإلهام الإبداع. ومع ذلك، يُحظر تماماً على المستخدمين استخدام المنصة لتوليد أو تعديل أو نشر وسائط لأغراض غير لائقة، ضارة، غير قانونية، أو مضللة. يشمل ذلك -على سبيل المثال لا الحصر- التزييف العميق، المحتوى المسيء، المحتوى الذي يحض على الكراهية، أو انتهاك حقوق الملكية الفكرية. يتحمل المستخدمون المسؤولية القانونية والأخلاقية الكاملة والوحيدة عن المحتوى الذي يقومون بتوليده وكيفية استخدامه أو نشره.",
+                t5: "5. تحديثات السياسة",
+                p5: "نظراً للتطور المستمر لمنصتنا وتقنيات الذكاء الاصطناعي، قد نقوم بتحديث هذه السياسة من وقت لآخر لتعكس أي ميزات تقنية أو إرشادات استخدام جديدة. سيتم نشر أي تغييرات مباشرة على هذه الصفحة.",
+                footer_r2: "R2",
+                lang_btn: "English"
+            }
+        };
+
+        let currentLang = 'en';
+        const langToggleBtn = document.getElementById('lang-toggle');
+        const elementsToTranslate = document.querySelectorAll('[data-lang]');
+
+        langToggleBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+            
+            elementsToTranslate.forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if(translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key]; // استخدام innerHTML للحفاظ على وسم الـ strong
+                }
+            });
+            langToggleBtn.textContent = translations[currentLang].lang_btn;
+        });
+
+        const themeBtn = document.getElementById('theme-toggle');
+        themeBtn.addEventListener('click', () => {
+            const isLight = document.body.getAttribute('data-theme') === 'light';
+            if (isLight) { 
+                document.body.removeAttribute('data-theme'); 
+                themeBtn.textContent = "☀️ Light"; 
+            } else { 
+                document.body.setAttribute('data-theme', 'light'); 
+                themeBtn.textContent = "🌙 Dark"; 
+            }
+        });
+    </script>
+</body>
+</html>
