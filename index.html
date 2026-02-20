@@ -12,20 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
-        /* المتغيرات (الوضع الافتراضي هو الداكن الآن) */
         :root {
-            --bg-color: #0f172a;      /* خلفية داكنة زرقاء عصرية */
-            --card-bg: #1e293b;       /* لون الكارت داكن */
-            --text-color: #f8fafc;    /* نص أبيض */
-            --accent-color: #8b5cf6;  /* لون بنفسجي مشع */
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --accent-color: #8b5cf6;
             --accent-hover: #7c3aed;
             --border-color: #334155;
-            --prompt-bg: #020617;     /* خلفية البرومبت سوداء */
-            --prompt-text: #a5b4fc;   /* لون نص البرومبت */
+            --prompt-bg: #020617;
+            --prompt-text: #a5b4fc;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
         }
 
-        /* وضع الثيم الفاتح (Light Mode) - يتم تفعيله عند وجود الكلاس */
         [data-theme="light"] {
             --bg-color: #f1f5f9;
             --card-bg: #ffffff;
@@ -41,7 +39,7 @@
         * { box-sizing: border-box; transition: all 0.3s ease; }
         
         body {
-            font-family: 'Cairo', sans-serif; /* الخط الجديد */
+            font-family: 'Cairo', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -51,7 +49,6 @@
             min-height: 100vh;
         }
 
-        /* الهيدر */
         header {
             background-color: var(--card-bg);
             padding: 1rem 2rem;
@@ -60,31 +57,29 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            position: sticky;
+            position: static;
             top: 0;
             z-index: 100;
         }
 
         .logo { 
             font-size: 1.8rem; 
-            font-weight: 900; /* بولد جداً */
+            font-weight: 900; 
             color: var(--accent-color); 
             text-decoration: none; 
             letter-spacing: 1px;
         }
 
         nav { display: flex; gap: 20px; align-items: center; }
-        
         nav a { 
             text-decoration: none; 
             color: var(--text-color); 
-            font-weight: 700; /* بولد */
+            font-weight: 700; 
             font-size: 1.1rem;
         }
         nav a:hover { color: var(--accent-color); transform: translateY(-2px); }
 
         .controls { display: flex; gap: 12px; }
-        
         button {
             padding: 10px 20px;
             cursor: pointer;
@@ -95,9 +90,7 @@
             font-family: 'Cairo', sans-serif;
             font-weight: 700;
         }
-        button:hover { border-color: var(--accent-color); }
 
-        /* المحتوى الرئيسي */
         main {
             flex: 1;
             padding: 3rem 2rem;
@@ -118,14 +111,14 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* كروت أعرض قليلاً */
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 25px;
         }
 
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 16px; /* حواف دائرية أكثر */
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--shadow);
             display: flex;
@@ -140,19 +133,12 @@
         .card-image {
             width: 100%;
             height: 220px;
+            object-fit: cover;
             background-color: #334155;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-size: 1.5rem;
-            font-weight: 700;
+            display: block;
         }
 
         .card-content { padding: 20px; }
-
-        .card-title { margin-top: 0; font-size: 1.4rem; font-weight: 900; margin-bottom: 10px; }
-
         .prompt-label { font-size: 0.9rem; opacity: 0.8; font-weight: 700; margin-bottom: 5px; display: block;}
 
         .prompt-box {
@@ -160,11 +146,20 @@
             color: var(--prompt-text);
             padding: 15px;
             border-radius: 8px;
-            font-family: 'Courier New', Courier, monospace; /* خط كود للبرومبت */
+            font-family: 'Courier New', Courier, monospace;
             font-size: 0.95rem;
             line-height: 1.5;
             margin-bottom: 15px;
             border: 1px solid var(--border-color);
+            
+            /* تعديل الحاوية لتكون أكبر قليلاً (4 أسطر) */
+            display: -webkit-box;
+            -webkit-line-clamp: 4; 
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-height: 6em; 
+            cursor: help; /* تغيير الماوس ليشير إلى وجود معلومة عند الوقوف */
         }
 
         .copy-btn {
@@ -185,7 +180,6 @@
             box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
         }
 
-        /* الفوتر */
         footer {
             background-color: var(--card-bg);
             text-align: center;
@@ -198,12 +192,10 @@
         
         footer strong { color: var(--accent-color); }
         
-        /* الميديا كويري */
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 15px; }
             nav { flex-wrap: wrap; justify-content: center; width: 100%; }
             .controls { width: 100%; justify-content: center; margin-top: 10px;}
-            .section-title { font-size: 2rem; }
         }
     </style>
 </head>
@@ -228,51 +220,44 @@
         
         <div class="grid-container" id="cards-container">
             <div class="card">
-                <img src="https://i.postimg.cc/W1NngkRB/unnamed.jpg" alt="img">
+                <img src="https://picsum.photos/400/220?random=1" alt="Cyberpunk City" class="card-image">
                 <div class="card-content">
                     <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
-                    <div class="prompt-box">
-                        Hyper-realistic cyberpunk city street at night, neon lights, rain reflection, 8k resolution, cinematic lighting, unreal engine 5 render.Ultra-realistic photo edit of the uploaded image. Keep the original face 100% unchanged — exact facial features, skin texture, facial structure, beard (if any), expression, and identity preserved with no modifications at all. Do not retouch, beautify, reshape, or enhance the face. Maintain perfect face integrity and realism.
-                        Transform the scene into a high-end luxury lifestyle photoshoot. The subject is leaning confidently against a black BMW M5 luxury sports sedan parked beside a clean white concrete wall. One hand inside the coat pocket, the other resting naturally on the car roof.
-                        Outfit: luxury boss-style long black overcoat (premium wool texture), tailored fit. Underneath, black formal shirt with the first button open. Black elegant sunglasses (matte or glossy finish). Outfit should look realistic with natural fabric folds and lighting interaction.
-Expression: confident, calm, dominant presence. Looking directly at the camera.
-Environment: minimalist luxury setting, white concrete wall background, subtle shadows, natural daylight or soft golden hour lighting.
-Camera style: wide-angle, full-body shot, slightly low angle for powerful presence. Ultra-detailed, cinematic composition, sharp focus, high dynamic range, realistic reflections on the car surface.
-Ensure natural skin tones, realistic lighting physics, accurate shadows, no artificial or cartoon effects. The final result must look like a real professional photoshoot captured with a high-end DSLR camera (85mm lens look, shallow depth of field).
-Photorealistic, 8K resolution, editorial luxury magazine style.
+                    <div class="prompt-box" title="Hyper-realistic cyberpunk city street at night, neon lights, rain reflection, 8k resolution, cinematic lighting, unreal engine 5 render, extremely detailed architecture, futuristic cars, steam coming from vents.">
+                        Hyper-realistic cyberpunk city street at night, neon lights, rain reflection, 8k resolution, cinematic lighting, unreal engine 5 render, extremely detailed architecture, futuristic cars, steam coming from vents.
                     </div>
                     <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-image">IMG 02</div>
+                <img src="https://picsum.photos/400/220?random=2" alt="Elderly Man" class="card-image">
                 <div class="card-content">
                     <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
-                    <div class="prompt-box">
-                        Close-up portrait of an elderly man with a detailed beard, natural light, bokeh background, shot on 85mm lens, vintage film grain style.
+                    <div class="prompt-box" title="Close-up portrait of an elderly man with a detailed beard, natural light, bokeh background, shot on 85mm lens, vintage film grain style, wrinkles showing wisdom, soft shadows.">
+                        Close-up portrait of an elderly man with a detailed beard, natural light, bokeh background, shot on 85mm lens, vintage film grain style, wrinkles showing wisdom, soft shadows.
                     </div>
                     <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
                 </div>
             </div>
 
             <div class="card">
-                <div class="card-image">IMG 03</div>
+                <img src="https://picsum.photos/400/220?random=3" alt="Enchanted Forest" class="card-image">
                 <div class="card-content">
                     <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
-                    <div class="prompt-box">
-                        Enchanted forest with glowing mushrooms, fireflies, misty atmosphere, fantasy art style, vibrant green and purple colors, digital painting.
+                    <div class="prompt-box" title="Enchanted forest with glowing mushrooms, fireflies, misty atmosphere, fantasy art style, vibrant green and purple colors, digital painting, epic scale, magical vibes.">
+                        Enchanted forest with glowing mushrooms, fireflies, misty atmosphere, fantasy art style, vibrant green and purple colors, digital painting, epic scale, magical vibes.
                     </div>
                     <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
                 </div>
             </div>
             
             <div class="card">
-                <div class="card-image">IMG 04</div>
+                <img src="https://picsum.photos/400/220?random=4" alt="Fox Logo" class="card-image">
                 <div class="card-content">
                     <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
-                    <div class="prompt-box">
-                        Minimalist vector logo of a geometric fox head, flat design, orange and white palette, white background, adobe illustrator style.
+                    <div class="prompt-box" title="Minimalist vector logo of a geometric fox head, flat design, orange and white palette, white background, adobe illustrator style, clean lines, professional branding.">
+                        Minimalist vector logo of a geometric fox head, flat design, orange and white palette, white background, adobe illustrator style, clean lines, professional branding.
                     </div>
                     <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
                 </div>
@@ -285,7 +270,6 @@ Photorealistic, 8K resolution, editorial luxury magazine style.
     </footer>
 
     <script>
-        // 1. الترجمة
         const translations = {
             en: {
                 home: "Home",
@@ -295,7 +279,6 @@ Photorealistic, 8K resolution, editorial luxury magazine style.
                 latest_prompts: "Latest Image Prompts",
                 prompt_label: "Prompt:",
                 copy_btn: "Copy Prompt",
-                empty_content: "Content coming soon...",
                 lang_btn: "العربية"
             },
             ar: {
@@ -306,7 +289,6 @@ Photorealistic, 8K resolution, editorial luxury magazine style.
                 latest_prompts: "أحدث برومبتات الصور",
                 prompt_label: "البرومبت:",
                 copy_btn: "نسخ البرومبت",
-                empty_content: "المحتوى قادم قريباً...",
                 lang_btn: "English"
             }
         };
@@ -328,37 +310,32 @@ Photorealistic, 8K resolution, editorial luxury magazine style.
             langToggleBtn.textContent = translations[currentLang].lang_btn;
         });
 
-        // 2. الثيم (Dark Default)
         const themeBtn = document.getElementById('theme-toggle');
-        
         themeBtn.addEventListener('click', () => {
             const isLight = document.body.getAttribute('data-theme') === 'light';
-            
             if (isLight) {
-                document.body.removeAttribute('data-theme'); // العودة للداكن (الافتراضي)
+                document.body.removeAttribute('data-theme');
                 themeBtn.textContent = "☀️ Light";
             } else {
-                document.body.setAttribute('data-theme', 'light'); // تفعيل الفاتح
+                document.body.setAttribute('data-theme', 'light');
                 themeBtn.textContent = "🌙 Dark";
             }
         });
 
-        // 3. النسخ
         function copyText(btn) {
-            const promptText = btn.previousElementSibling.innerText;
+            const promptBox = btn.previousElementSibling;
+            const promptText = promptBox.innerText; 
+            
             navigator.clipboard.writeText(promptText).then(() => {
                 const originalText = btn.textContent;
                 btn.textContent = currentLang === 'ar' ? "تم النسخ بنجاح!" : "Copied Successfully!";
-                btn.style.backgroundColor = "#10b981"; // لون أخضر عند النسخ
+                btn.style.backgroundColor = "#10b981";
                 setTimeout(() => {
                     btn.textContent = originalText;
-                    btn.style.backgroundColor = ""; // العودة للون الأصلي
+                    btn.style.backgroundColor = "";
                 }, 2000);
             });
         }
     </script>
 </body>
 </html>
-
-
-
