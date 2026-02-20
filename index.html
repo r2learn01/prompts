@@ -152,14 +152,13 @@
             margin-bottom: 15px;
             border: 1px solid var(--border-color);
             
-            /* تعديل الحاوية لتكون أكبر قليلاً (4 أسطر) */
             display: -webkit-box;
             -webkit-line-clamp: 4; 
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
             max-height: 6em; 
-            cursor: help; /* تغيير الماوس ليشير إلى وجود معلومة عند الوقوف */
+            cursor: help;
         }
 
         .copy-btn {
@@ -197,22 +196,20 @@
             nav { flex-wrap: wrap; justify-content: center; width: 100%; }
             .controls { width: 100%; justify-content: center; margin-top: 10px;}
         }
-        .social-links {
-    margin-top: 15px;
-}
+        .social-links { margin-top: 15px; }
 
-.social-links a {
-    color: var(--text-color);
-    font-size: 22px;
-    margin: 0 10px;
-    transition: 0.3s ease;
-    text-decoration:none;
-}
+        .social-links a {
+            color: var(--text-color);
+            font-size: 22px;
+            margin: 0 10px;
+            transition: 0.3s ease;
+            text-decoration:none;
+        }
 
-.social-links a:hover {
-    color: var(--accent-color);
-    transform: scale(1.2);
-}
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: scale(1.2);
+        }
     </style>
 </head>
 <body>
@@ -235,141 +232,88 @@
         <h2 class="section-title" data-lang="latest_prompts">Latest Image Prompts</h2>
         
         <div class="grid-container" id="cards-container">
+            
             <div class="card">
                 <img src="https://i.postimg.cc/W1NngkRB/unnamed.jpg" alt="img" class="card-image">
                 <div class="card-content">
                     <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
-                    <div class="prompt-box" title="Ultra-realistic photo edit of the uploaded image. Keep the original face 100% unchanged — exact facial features, skin texture, facial structure, beard (if any), expression, and identity preserved with no modifications at all. Do not retouch, beautify, reshape, or enhance the face. Maintain perfect face integrity and realism.
-Transform the scene into a high-end luxury lifestyle photoshoot. The subject is leaning confidently against a black BMW M5 luxury sports sedan parked beside a clean white concrete wall. One hand inside the coat pocket, the other resting naturally on the car roof.
-Outfit: luxury boss-style long black overcoat (premium wool texture), tailored fit. Underneath, black formal shirt with the first button open. Black elegant sunglasses (matte or glossy finish). Outfit should look realistic with natural fabric folds and lighting interaction.
-Expression: confident, calm, dominant presence. Looking directly at the camera.
-Environment: minimalist luxury setting, white concrete wall background, subtle shadows, natural daylight or soft golden hour lighting.
-Camera style: wide-angle, full-body shot, slightly low angle for powerful presence. Ultra-detailed, cinematic composition, sharp focus, high dynamic range, realistic reflections on the car surface.
-Ensure natural skin tones, realistic lighting physics, accurate shadows, no artificial or cartoon effects. The final result must look like a real professional photoshoot captured with a high-end DSLR camera (85mm lens look, shallow depth of field).
-Photorealistic, 8K resolution, editorial luxury magazine style.">
-                       Ultra-realistic photo edit of the uploaded image. Keep the original face 100% unchanged — exact facial features, skin texture, facial structure, beard (if any), expression, and identity preserved with no modifications at all. Do not retouch, beautify, reshape, or enhance the face. Maintain perfect face integrity and realism.
-Transform the scene into a high-end luxury lifestyle photoshoot. The subject is leaning confidently against a black BMW M5 luxury sports sedan parked beside a clean white concrete wall. One hand inside the coat pocket, the other resting naturally on the car roof.
-Outfit: luxury boss-style long black overcoat (premium wool texture), tailored fit. Underneath, black formal shirt with the first button open. Black elegant sunglasses (matte or glossy finish). Outfit should look realistic with natural fabric folds and lighting interaction.
-Expression: confident, calm, dominant presence. Looking directly at the camera.
-Environment: minimalist luxury setting, white concrete wall background, subtle shadows, natural daylight or soft golden hour lighting.
-Camera style: wide-angle, full-body shot, slightly low angle for powerful presence. Ultra-detailed, cinematic composition, sharp focus, high dynamic range, realistic reflections on the car surface.
-Ensure natural skin tones, realistic lighting physics, accurate shadows, no artificial or cartoon effects. The final result must look like a real professional photoshoot captured with a high-end DSLR camera (85mm lens look, shallow depth of field).
-Photorealistic, 8K resolution, editorial luxury magazine style.
+                    <div class="prompt-box" title="Ultra-realistic photo edit of the uploaded image. Keep the original face 100% unchanged...">
+                        Ultra-realistic photo edit of the uploaded image. Keep the original face 100% unchanged — exact facial features, skin texture, facial structure, beard (if any), expression, and identity preserved with no modifications at all. Do not retouch, beautify, reshape, or enhance the face. Maintain perfect face integrity and realism. Transform the scene into a high-end luxury lifestyle photoshoot. The subject is leaning confidently against a black BMW M5 luxury sports sedan parked beside a clean white concrete wall. One hand inside the coat pocket, the other resting naturally on the car roof. Outfit: luxury boss-style long black overcoat (premium wool texture), tailored fit. Underneath, black formal shirt with the first button open. Black elegant sunglasses (matte or glossy finish). Outfit should look realistic with natural fabric folds and lighting interaction. Expression: confident, calm, dominant presence. Looking directly at the camera. Environment: minimalist luxury setting, white concrete wall background, subtle shadows, natural daylight or soft golden hour lighting. Camera style: wide-angle, full-body shot, slightly low angle for powerful presence. Ultra-detailed, cinematic composition, sharp focus, high dynamic range, realistic reflections on the car surface. Ensure natural skin tones, realistic lighting physics, accurate shadows, no artificial or cartoon effects. The final result must look like a real professional photoshoot captured with a high-end DSLR camera (85mm lens look, shallow depth of field). Photorealistic, 8K resolution, editorial luxury magazine style.
                     </div>
                     <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
                 </div>
             </div>
 
-
-<!-- =========================================================================================================== -->
-
-            
             <div class="card">
                 <img src="https://i.postimg.cc/SRV4s9bJ/unnamed.jpg" alt="img" class="card-image">
                 <div class="card-content">
                     <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
-                    <div class="prompt-box" title=A full-body mirror selfie shows a man with a light brown skin tone, dark hair, and a short beard, wearing a loose-fitting, light peach-colored knitted sweater over a white t-shirt and light blue distressed jeans. He is holding a black smartphone up to take the photo, with his left hand in his pocket. The setting is a modern bathroom with white subway tile walls. In the background, there iss a large green fiddle leaf fig plant in a white pot, and a reflection of a light fixture is visible in the mirror above his head. The lighting is bright and even">
-                       A full-body mirror selfie shows a man with a light brown skin tone, dark hair, and a short beard, wearing a loose-fitting, light peach-colored knitted sweater over a white t-shirt and light blue distressed jeans. He is holding a black smartphone up to take the photo, with his left hand in his pocket. The setting is a modern bathroom with white subway tile walls. In the background, there's a large green fiddle leaf fig plant in a white pot, and a reflection of a light fixture is visible in the mirror above his head. The lighting is bright and even
+                    <div class="prompt-box" title="A full-body mirror selfie shows a man with a light brown skin tone, dark hair, and a short beard...">
+                        A full-body mirror selfie shows a man with a light brown skin tone, dark hair, and a short beard, wearing a loose-fitting, light peach-colored knitted sweater over a white t-shirt and light blue distressed jeans. He is holding a black smartphone up to take the photo, with his left hand in his pocket. The setting is a modern bathroom with white subway tile walls. In the background, there's a large green fiddle leaf fig plant in a white pot, and a reflection of a light fixture is visible in the mirror above his head. The lighting is bright and even
                     </div>
                     <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
                 </div>
             </div>
 
-<!-- =========================================================================================================== -->
- <div class="card">
+            <div class="card">
                 <img src="https://i.postimg.cc/PqdyjVQK/unnamed.jpg" alt="Fox Logo" class="card-image">
                 <div class="card-content">
                     <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
-                    <div class="prompt-box" title="Ultra-realistic black and white street photography portrait based strictly on the reference image. COMPOSITION LOCK: Maintain the same framing, angle, crop, and urban mood as the reference image, preserve identical subject positioning and spatial balance, no re-posing beyond the described posture. Subject & Pose: A young man sitting casually on a low concrete ledge beside a textured corrugated metal wall, legs spread naturally in a relaxed street posture, one hand resting loosely near the thigh, the other hand lifting or subtly adjusting a black baseball cap, head tilted slightly downward, face partially shadowed by the cap, calm, introspective expression, no smile, natural masculine facial structure. Identity Preservation (if editing a real face): Preserve exact facial structure, skin texture, proportions, and natural imperfections, no beautification, no smoothing, no reshaping, no stylization, maintain raw authenticity. Outfit Styling: Oversized black long-sleeve t-shirt (sleeves fully covering arms), bold white graphic symbol centered on chest (single graphic only, no extra branding), loose-fit light-colored jeans with natural fabric folds, white sneakers with visible laces and thick sole, white crew socks visible above sneakers, black baseball cap pulled low over the eyes, minimalist streetwear aesthetic, no logos, no visible brand names. Environment: Industrial urban setting, corrugated metal wall with strong vertical texture, window blinds shadow pattern on side wall, rough concrete pavement, subtle graffiti above or near the subject, gritty city atmosphere with authentic imperfections. Lighting & Tone: High-contrast black and white photography, cinematic monochrome grading, strong directional natural daylight creating defined shadows, realistic tonal depth and dynamic range, visible film grain texture (35mm film look), no artificial HDR glow, no over-processing. Camera & Technical Details: 35mm lens perspective, slight low-angle viewpoint, sharp focus on subject, subtle background blur (natural depth of field), documentary-style street photography, raw cinematic realism, ultra-detailed textures, authentic, unpolished, editorial street aesthetic. Negative Prompt: smile, soft beauty lighting, fashion studio lighting, glossy retouching, modern influencer style, color image, low contrast, distorted anatomy, cartoon, illustration, oversharpening, AI face artifacts, unrealistic smooth skin.">
-                       Ultra-realistic black and white street photography portrait based strictly on the reference image. COMPOSITION LOCK: Maintain the same framing, angle, crop, and urban mood as the reference image, preserve identical subject positioning and spatial balance, no re-posing beyond the described posture. Subject & Pose: A young man sitting casually on a low concrete ledge beside a textured corrugated metal wall, legs spread naturally in a relaxed street posture, one hand resting loosely near the thigh, the other hand lifting or subtly adjusting a black baseball cap, head tilted slightly downward, face partially shadowed by the cap, calm, introspective expression, no smile, natural masculine facial structure. Identity Preservation (if editing a real face): Preserve exact facial structure, skin texture, proportions, and natural imperfections, no beautification, no smoothing, no reshaping, no stylization, maintain raw authenticity. Outfit Styling: Oversized black long-sleeve t-shirt (sleeves fully covering arms), bold white graphic symbol centered on chest (single graphic only, no extra branding), loose-fit light-colored jeans with natural fabric folds, white sneakers with visible laces and thick sole, white crew socks visible above sneakers, black baseball cap pulled low over the eyes, minimalist streetwear aesthetic, no logos, no visible brand names. Environment: Industrial urban setting, corrugated metal wall with strong vertical texture, window blinds shadow pattern on side wall, rough concrete pavement, subtle graffiti above or near the subject, gritty city atmosphere with authentic imperfections. Lighting & Tone: High-contrast black and white photography, cinematic monochrome grading, strong directional natural daylight creating defined shadows, realistic tonal depth and dynamic range, visible film grain texture (35mm film look), no artificial HDR glow, no over-processing. Camera & Technical Details: 35mm lens perspective, slight low-angle viewpoint, sharp focus on subject, subtle background blur (natural depth of field), documentary-style street photography, raw cinematic realism, ultra-detailed textures, authentic, unpolished, editorial street aesthetic. Negative Prompt: smile, soft beauty lighting, fashion studio lighting, glossy retouching, modern influencer style, color image, low contrast, distorted anatomy, cartoon, illustration, oversharpening, AI face artifacts, unrealistic smooth skin.
+                    <div class="prompt-box" title="Ultra-realistic black and white street photography portrait based strictly on the reference image...">
+                        Ultra-realistic black and white street photography portrait based strictly on the reference image. COMPOSITION LOCK: Maintain the same framing, angle, crop, and urban mood as the reference image, preserve identical subject positioning and spatial balance, no re-posing beyond the described posture. Subject & Pose: A young man sitting casually on a low concrete ledge beside a textured corrugated metal wall, legs spread naturally in a relaxed street posture, one hand resting loosely near the thigh, the other hand lifting or subtly adjusting a black baseball cap, head tilted slightly downward, face partially shadowed by the cap, calm, introspective expression, no smile, natural masculine facial structure. Identity Preservation (if editing a real face): Preserve exact facial structure, skin texture, proportions, and natural imperfections, no beautification, no smoothing, no reshaping, no stylization, maintain raw authenticity. Outfit Styling: Oversized black long-sleeve t-shirt (sleeves fully covering arms), bold white graphic symbol centered on chest (single graphic only, no extra branding), loose-fit light-colored jeans with natural fabric folds, white sneakers with visible laces and thick sole, white crew socks visible above sneakers, black baseball cap pulled low over the eyes, minimalist streetwear aesthetic, no logos, no visible brand names. Environment: Industrial urban setting, corrugated metal wall with strong vertical texture, window blinds shadow pattern on side wall, rough concrete pavement, subtle graffiti above or near the subject, gritty city atmosphere with authentic imperfections. Lighting & Tone: High-contrast black and white photography, cinematic monochrome grading, strong directional natural daylight creating defined shadows, realistic tonal depth and dynamic range, visible film grain texture (35mm film look), no artificial HDR glow, no over-processing. Camera & Technical Details: 35mm lens perspective, slight low-angle viewpoint, sharp focus on subject, subtle background blur (natural depth of field), documentary-style street photography, raw cinematic realism, ultra-detailed textures, authentic, unpolished, editorial street aesthetic. Negative Prompt: smile, soft beauty lighting, fashion studio lighting, glossy retouching, modern influencer style, color image, low contrast, distorted anatomy, cartoon, illustration, oversharpening, AI face artifacts, unrealistic smooth skin.
                     </div>
                     <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
                 </div>
             </div>
-        </div>
 
-<!-- =========================================================================================================== -->
-            
             <div class="card">
                 <img src="https://i.postimg.cc/zGmGLn9k/unnamed.jpg" alt="img" class="card-image">
                 <div class="card-content">
                     <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
-                    <div class="prompt-box" title="Ultra-realistic cinematic portrait of the uploaded person.
-Preserve the face 100% — exact facial structure, skin texture, proportions, expression, and identity must remain completely unchanged. No beautification, no reshaping, no artificial smoothing, no stylization. Maintain natural skin tone and realistic detail.
-Scene: The subject is leaning casually against a modern café railing at night. Warm ambient streetlights and decorative café lights create a soft golden glow.
-Outfit: Stylish red jacket (modern tailored fit), clean white t-shirt underneath, slim black jeans. Natural fabric folds and realistic lighting interaction on clothing.
-Expression & pose: Relaxed posture, soft confident smile, looking directly at the camera. One arm resting naturally on the railing.
-Lighting: Warm cinematic lighting with streetlights subtly reflecting on the face. Gentle rim light outlining hair and shoulders. Soft shadows for depth.
-Background: Strong bokeh effect with warm golden fairy lights and soft blurred café atmosphere. Depth of field effect (85mm lens look), creamy background separation.
-Camera style: Professional lifestyle photoshoot, ultra-sharp focus on face, HDR 8K clarity, natural color grading, cinematic tone, realistic texture detail.
-Final result must look like a real DSLR night portrait — not AI-generated, not cartoonish, no distortions.">
-                      Ultra-realistic cinematic portrait of the uploaded person.
-Preserve the face 100% — exact facial structure, skin texture, proportions, expression, and identity must remain completely unchanged. No beautification, no reshaping, no artificial smoothing, no stylization. Maintain natural skin tone and realistic detail.
-Scene: The subject is leaning casually against a modern café railing at night. Warm ambient streetlights and decorative café lights create a soft golden glow.
-Outfit: Stylish red jacket (modern tailored fit), clean white t-shirt underneath, slim black jeans. Natural fabric folds and realistic lighting interaction on clothing.
-Expression & pose: Relaxed posture, soft confident smile, looking directly at the camera. One arm resting naturally on the railing.
-Lighting: Warm cinematic lighting with streetlights subtly reflecting on the face. Gentle rim light outlining hair and shoulders. Soft shadows for depth.
-Background: Strong bokeh effect with warm golden fairy lights and soft blurred café atmosphere. Depth of field effect (85mm lens look), creamy background separation.
-Camera style: Professional lifestyle photoshoot, ultra-sharp focus on face, HDR 8K clarity, natural color grading, cinematic tone, realistic texture detail.
-Final result must look like a real DSLR night portrait — not AI-generated, not cartoonish, no distortions.
+                    <div class="prompt-box" title="Ultra-realistic cinematic portrait of the uploaded person...">
+                        Ultra-realistic cinematic portrait of the uploaded person. Preserve the face 100% — exact facial structure, skin texture, proportions, expression, and identity must remain completely unchanged. No beautification, no reshaping, no artificial smoothing, no stylization. Maintain natural skin tone and realistic detail. Scene: The subject is leaning casually against a modern café railing at night. Warm ambient streetlights and decorative café lights create a soft golden glow. Outfit: Stylish red jacket (modern tailored fit), clean white t-shirt underneath, slim black jeans. Natural fabric folds and realistic lighting interaction on clothing. Expression & pose: Relaxed posture, soft confident smile, looking directly at the camera. One arm resting naturally on the railing. Lighting: Warm cinematic lighting with streetlights subtly reflecting on the face. Gentle rim light outlining hair and shoulders. Soft shadows for depth. Background: Strong bokeh effect with warm golden fairy lights and soft blurred café atmosphere. Depth of field effect (85mm lens look), creamy background separation. Camera style: Professional lifestyle photoshoot, ultra-sharp focus on face, HDR 8K clarity, natural color grading, cinematic tone, realistic texture detail. Final result must look like a real DSLR night portrait — not AI-generated, not cartoonish, no distortions.
                     </div>
                     <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
                 </div>
             </div>
-<!-- =========================================================================================================== -->
- <div class="card">
+
+            <div class="card">
                 <img src="https://picsum.photos/400/220?random=4" alt="Fox Logo" class="card-image">
                 <div class="card-content">
                     <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
                     <div class="prompt-box" title="Ultddddddddddd">
-      pcepowmvrpmvp
+                        pcepowmvrpmvp
                     </div>
                     <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
                 </div>
             </div>
-        </div>            
-<!-- =========================================================================================================== -->
-        <div class="card">
-                <img src="https://picsum.photos/400/220?random=4" alt="Fox Logo" class="card-image">
+
+            <div class="card">
+                <img src="https://picsum.photos/400/220?random=5" alt="Fox Logo" class="card-image">
                 <div class="card-content">
                     <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
                     <div class="prompt-box" title="Ultddddddddddd">
-      pcepowmvrpmvp
+                        pcepowmvrpmvp
                     </div>
                     <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
                 </div>
             </div>
-        </div>            
-<!-- =========================================================================================================== -->
-        <!-- <div class="card">
-                <img src="https://picsum.photos/400/220?random=4" alt="Fox Logo" class="card-image">
-                <div class="card-content">
-                    <span class="prompt-label" data-lang="prompt_label">Prompt:</span>
-                    <div class="prompt-box" title="Ultddddddddddd">
-      pcepowmvrpmvp
-                    </div>
-                    <button class="copy-btn" onclick="copyText(this)" data-lang="copy_btn">Copy Prompt</button>
-                </div>
-            </div>
-        </div>             -->
-<!-- =========================================================================================================== -->
-<!-- =========================================================================================================== -->
-<!-- =========================================================================================================== -->
-           
+            
+        </div> 
+            
     </main>
 
     <footer>
-    <p>&copy; All rights reserved | powered by <strong>R2</strong></p>
-
-    <div class="social-links">
-        <a href="https://facebook.com/yourpage" target="_blank">
-            <i class="fab fa-facebook"></i>
-        </a>
-        <a href="https://instagram.com/yourpage" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-    </div>
-</footer>
+        <p>&copy; All rights reserved | powered by <strong>R2</strong></p>
+        <div class="social-links">
+            <a href="https://facebook.com/yourpage" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://instagram.com/yourpage" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
 
     <script>
         const translations = {
@@ -441,12 +385,3 @@ Final result must look like a real DSLR night portrait — not AI-generated, not
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
