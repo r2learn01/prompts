@@ -306,7 +306,7 @@
             const icon = document.getElementById('theme-icon');
             const text = document.getElementById('theme-text');
             const isDark = theme === 'dark';
-            icon.className = isDark ? 'fas fa-sun':'fas fa-moon'  ;
+            icon.className = isDark ? 'fas fa-moon':'fas fa-sun' ;
             const lang = localStorage.getItem('lang') || 'en';
             text.innerText = translations[lang][isDark ? 'theme_dark' : 'theme_light'];
         }
