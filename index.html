@@ -10,25 +10,24 @@
 
     <style>
         :root {
-            /* الألوان المستوحاة من الصورة (الثيم الداكن) */
-            --bg-color: #151828; 
-            --header-bg: #151828;
+            /* الألوان الأصلية */
+            --bg-color: #0f0f13;
             --text-color: #ffffff;
-            --logo-color: #a855f7; /* لون اللوجو البنفسجي */
-            --title-color: #d946ef; /* لون العناوين الوردي/البنفسجي */
-            --border-color: #374151; /* لون حدود الأزرار */
-            --overlay-color: rgba(21, 24, 40, 0.75); /* طبقة شفافة فوق الفيديو */
+            --primary-color: #00d2ff;
+            --secondary-color: #3a7bd5;
+            --nav-bg: rgba(15, 15, 19, 0.9);
+            --overlay-color: rgba(0, 0, 0, 0.65);
+            --border-color: rgba(255, 255, 255, 0.1);
         }
 
         [data-theme="light"] {
-            /* متغيرات الثيم الفاتح */
-            --bg-color: #f8fafc;
-            --header-bg: #ffffff;
-            --text-color: #0f172a;
-            --logo-color: #7e22ce;
-            --title-color: #c026d3;
-            --border-color: #cbd5e1;
-            --overlay-color: rgba(248, 250, 252, 0.7);
+            --bg-color: #f4f4f9;
+            --text-color: #1a1a1a;
+            --primary-color: #0078d7;
+            --secondary-color: #00b4d8;
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --overlay-color: rgba(255, 255, 255, 0.7);
+            --border-color: rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -36,16 +35,19 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Cairo', sans-serif;
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+            transition: all 0.3s ease;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Header (شريط التنقل) */
+        /* Header */
         header {
             position: fixed;
             top: 0;
@@ -54,7 +56,8 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 50px;
-            background: var(--header-bg);
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border-color);
             z-index: 1000;
         }
@@ -62,9 +65,10 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 900;
-            color: var(--logo-color);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-decoration: none;
-            letter-spacing: 1px;
         }
 
         .nav-links {
@@ -76,48 +80,44 @@
             color: var(--text-color);
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
         .nav-links a:hover {
-            color: var(--logo-color);
+            color: var(--primary-color);
         }
 
-        /* أزرار الهيدر (الترجمة والثيم) */
+        /* Controls */
         .controls {
             display: flex;
-            gap: 15px;
+            gap: 12px;
         }
 
-        .header-btn {
+        .control-btn {
             background: transparent;
             border: 1px solid var(--border-color);
             color: var(--text-color);
-            padding: 8px 16px;
+            padding: 7px 15px;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 1rem;
             font-weight: 700;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .header-btn i {
-            color: #fbbf24; /* لون الشمس الأصفر */
+        .control-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
         }
 
-        .header-btn:hover {
-            border-color: var(--text-color);
-        }
-
-        /* الفيديو في الخلفية */
+        /* Video Background */
         .video-container {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh;
+            height: 100%;
             z-index: -1;
         }
 
@@ -136,79 +136,102 @@
             background: var(--overlay-color);
         }
 
-        /* محتوى الصفحة الرئيسية */
+        /* Main Content */
         .hero-content {
-            height: 100vh;
+            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            position: relative;
             z-index: 10;
         }
 
         .hero-content h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             margin-bottom: 20px;
-            color: var(--title-color);
             font-weight: 900;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-content p {
             font-size: 1.3rem;
+            max-width: 750px;
             margin-bottom: 40px;
-            max-width: 700px;
             line-height: 1.6;
+            opacity: 0.9;
         }
 
-        /* أزرار الخدمات في المنتصف */
-        .buttons-container {
+        /* Main Action Buttons */
+        .btn-group {
             display: flex;
             gap: 20px;
         }
 
         .main-btn {
-            padding: 12px 35px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border-radius: 8px;
+            padding: 14px 35px;
+            border-radius: 10px;
             text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
             gap: 10px;
-            transition: 0.3s;
+            transition: 0.3s transform ease;
         }
 
         .btn-fill {
-            background: var(--logo-color);
-            color: #fff;
-            border: 1px solid var(--logo-color);
-        }
-
-        .btn-fill:hover {
-            background: var(--title-color);
-            border-color: var(--title-color);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
         }
 
         .btn-outline {
             background: transparent;
             color: var(--text-color);
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--primary-color);
         }
 
-        .btn-outline:hover {
-            border-color: var(--logo-color);
-            color: var(--logo-color);
+        .main-btn:hover {
+            transform: translateY(-5px);
         }
 
+        /* Social Media Footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            z-index: 10;
+        }
+
+        .social-link {
+            color: var(--text-color);
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .social-link:hover {
+            opacity: 1;
+            color: var(--primary-color);
+            transform: scale(1.2);
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
-            header { padding: 15px 20px; flex-wrap: wrap; justify-content: center; gap: 15px; }
-            .nav-links { width: 100%; justify-content: center; margin-bottom: 10px; }
+            header { padding: 15px 20px; flex-direction: column; gap: 10px; }
             .hero-content h1 { font-size: 2.5rem; }
-            .buttons-container { flex-direction: column; width: 100%; max-width: 300px; }
+            .btn-group { flex-direction: column; width: 100%; max-width: 300px; }
             .main-btn { justify-content: center; }
+            footer { gap: 20px; }
         }
     </style>
 </head>
@@ -217,15 +240,16 @@
     <header>
         <a href="index.html" class="logo">R2 AI</a>
         <nav class="nav-links">
-            <a href="index.html" data-i18n="nav_home">Home</a>
             <a href="about.html" data-i18n="nav_about">About Us</a>
             <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
         </nav>
         <div class="controls">
-            <button class="header-btn" id="theme-toggle" onclick="toggleTheme()">
-                <i class="fas fa-sun"></i> <span id="theme-text" data-i18n="theme_light">Light</span>
+            <button class="control-btn" onclick="toggleTheme()">
+                <i id="theme-icon" class="fas fa-moon"></i>
+                <span id="theme-text" data-i18n="theme_dark">Dark</span>
             </button>
-            <button class="header-btn" id="lang-toggle" onclick="toggleLanguage()">
+            <button class="control-btn" onclick="toggleLanguage()">
+                <i class="fas fa-globe"></i>
                 <span id="lang-text">العربية</span>
             </button>
         </div>
@@ -233,111 +257,105 @@
 
     <div class="video-container">
         <div class="overlay"></div>
-        <video id="bg-video" autoplay loop muted playsinline>
-            </video>
+        <video id="bg-video" autoplay loop muted playsinline></video>
     </div>
 
     <main class="hero-content">
         <h1 data-i18n="hero_title">R2 AI Platform</h1>
-        <p data-i18n="hero_desc">Your ultimate hub for AI prompts and powerful free tools. Boost your creativity and productivity instantly.</p>
+        <p data-i18n="hero_desc">Explore the future of productivity with our curated library of AI prompts and premium free tools designed for creators.</p>
         
-        <div class="buttons-container">
+        <div class="btn-group">
             <a href="prompt.html" class="main-btn btn-fill">
                 <i class="fas fa-terminal"></i> <span data-i18n="btn_prompts">Prompts Library</span>
             </a>
             <a href="blog.html" class="main-btn btn-outline">
-                <i class="fas fa-magic"></i> <span data-i18n="btn_tools">Free AI Tools</span>
+                <i class="fas fa-magic"></i> <span data-i18n="btn_tools">AI Tools Hub</span>
             </a>
         </div>
     </main>
 
+    <footer>
+        <a href="https://facebook.com/yourlink" class="social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://instagram.com/yourlink" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/yourlink" class="social-link" target="_blank"><i class="fab fa-telegram"></i></a>
+    </footer>
+
     <script>
-        // 1. تشغيل فيديو عشوائي
+        // 1. Random Video Logic
         const videos = [
             "https://cdn.pixabay.com/video/2023/10/22/186105-877134005_large.mp4",
             "https://cdn.pixabay.com/video/2023/08/24/177436-857321590_large.mp4"
         ];
         document.getElementById('bg-video').src = videos[Math.floor(Math.random() * videos.length)];
 
-        // 2. نظام الثيمات (Dark/Light)
-        const htmlElement = document.documentElement;
-        const themeIcon = document.querySelector('#theme-toggle i');
-        
-        if(localStorage.getItem('theme') === 'light') {
-            htmlElement.setAttribute('data-theme', 'light');
-            themeIcon.className = 'fas fa-moon';
-        }
-
+        // 2. Theme Logic
+        const html = document.documentElement;
         function toggleTheme() {
-            const isDark = htmlElement.getAttribute('data-theme') === 'dark';
-            const newTheme = isDark ? 'light' : 'dark';
-            
-            htmlElement.setAttribute('data-theme', newTheme);
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            
-            themeIcon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
-            
-            // تحديث نص زر الثيم حسب اللغة الحالية
-            const currentLang = localStorage.getItem('lang') || 'en';
-            const textKey = newTheme === 'light' ? 'theme_dark' : 'theme_light';
-            document.getElementById('theme-text').innerText = translations[currentLang][textKey];
+            updateThemeUI(newTheme);
         }
 
-        // 3. نظام الترجمة (الافتراضي إنجليزي)
+        function updateThemeUI(theme) {
+            const icon = document.getElementById('theme-icon');
+            const text = document.getElementById('theme-text');
+            const isDark = theme === 'dark';
+            icon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+            const lang = localStorage.getItem('lang') || 'en';
+            text.innerText = translations[lang][isDark ? 'theme_dark' : 'theme_light'];
+        }
+
+        // 3. Translation Logic
         const translations = {
             en: {
-                nav_home: "Home",
                 nav_about: "About Us",
                 nav_privacy: "Privacy Policy",
-                theme_light: "Light",
                 theme_dark: "Dark",
-                lang_btn: "العربية",
+                theme_light: "Light",
                 hero_title: "R2 AI Platform",
-                hero_desc: "Your ultimate hub for AI prompts and powerful free tools. Boost your creativity and productivity instantly.",
+                hero_desc: "Explore the future of productivity with our curated library of AI prompts and premium free tools designed for creators.",
                 btn_prompts: "Prompts Library",
-                btn_tools: "Free AI Tools"
+                btn_tools: "AI Tools Hub",
+                lang_btn: "العربية"
             },
             ar: {
-                nav_home: "الرئيسية",
-                nav_about: "عن الموقع",
+                nav_about: "من نحن",
                 nav_privacy: "سياسة الخصوصية",
-                theme_light: "فاتح",
                 theme_dark: "داكن",
-                lang_btn: "English",
+                theme_light: "فاتح",
                 hero_title: "منصة R2 للذكاء الاصطناعي",
-                hero_desc: "بوابتك الشاملة لأفضل البرومبتات وأقوى أدوات الذكاء الاصطناعي المجانية التي ستضاعف إنتاجيتك وتختصر وقتك.",
+                hero_desc: "استكشف مستقبل الإنتاجية من خلال مكتبتنا المنسقة لبرومبتات الذكاء الاصطناعي وأدواتنا المجانية المصممة للمبدعين.",
                 btn_prompts: "مكتبة البرومبتات",
-                btn_tools: "أفضل الأدوات المجانية"
+                btn_tools: "مركز الأدوات",
+                lang_btn: "English"
             }
         };
 
-        let currentLang = localStorage.getItem('lang') || 'en';
-        applyTranslation(currentLang);
-
         function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'ar' : 'en';
-            localStorage.setItem('lang', currentLang);
-            applyTranslation(currentLang);
+            const currentLang = localStorage.getItem('lang') || 'en';
+            const newLang = currentLang === 'en' ? 'ar' : 'en';
+            localStorage.setItem('lang', newLang);
+            applyLanguage(newLang);
         }
 
-        function applyTranslation(lang) {
-            htmlElement.lang = lang;
-            htmlElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    element.innerText = translations[lang][key];
-                }
+        function applyLanguage(lang) {
+            html.lang = lang;
+            html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                el.innerText = translations[lang][key];
             });
-            
             document.getElementById('lang-text').innerText = translations[lang].lang_btn;
-            
-            // تحديث نص الثيم بناءً على الحالة الحالية
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const themeKey = currentTheme === 'dark' ? 'theme_light' : 'theme_dark';
-            document.getElementById('theme-text').innerText = translations[lang][themeKey];
+            updateThemeUI(html.getAttribute('data-theme'));
         }
+
+        // Initialize
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        const savedLang = localStorage.getItem('lang') || 'en';
+        html.setAttribute('data-theme', savedTheme);
+        applyLanguage(savedLang);
     </script>
 </body>
 </html>
