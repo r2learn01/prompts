@@ -1,32 +1,34 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="dark">
+<html lang="en" dir="ltr" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R2Learn - دليلك للذكاء الاصطناعي</title>
+    <title>R2 AI</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            /* متغيرات الثيم الداكن (الافتراضي) */
-            --bg-color: #0f0f13;
+            /* الألوان المستوحاة من الصورة (الثيم الداكن) */
+            --bg-color: #151828; 
+            --header-bg: #151828;
             --text-color: #ffffff;
-            --primary-color: #00d2ff;
-            --secondary-color: #3a7bd5;
-            --nav-bg: rgba(15, 15, 19, 0.85);
-            --overlay-color: rgba(0, 0, 0, 0.65);
+            --logo-color: #a855f7; /* لون اللوجو البنفسجي */
+            --title-color: #d946ef; /* لون العناوين الوردي/البنفسجي */
+            --border-color: #374151; /* لون حدود الأزرار */
+            --overlay-color: rgba(21, 24, 40, 0.75); /* طبقة شفافة فوق الفيديو */
         }
 
         [data-theme="light"] {
             /* متغيرات الثيم الفاتح */
-            --bg-color: #f4f4f9;
-            --text-color: #1a1a1a;
-            --primary-color: #0078d7;
-            --secondary-color: #00b4d8;
-            --nav-bg: rgba(255, 255, 255, 0.9);
-            --overlay-color: rgba(255, 255, 255, 0.7);
+            --bg-color: #f8fafc;
+            --header-bg: #ffffff;
+            --text-color: #0f172a;
+            --logo-color: #7e22ce;
+            --title-color: #c026d3;
+            --border-color: #cbd5e1;
+            --overlay-color: rgba(248, 250, 252, 0.7);
         }
 
         * {
@@ -34,16 +36,16 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Cairo', sans-serif;
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            overflow: hidden; /* لمنع التمرير في الصفحة الرئيسية */
+            overflow: hidden;
         }
 
-        /* شريط التنقل (Header) */
+        /* Header (شريط التنقل) */
         header {
             position: fixed;
             top: 0;
@@ -52,44 +54,64 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 50px;
-            background: var(--nav-bg);
-            backdrop-filter: blur(10px);
+            background: var(--header-bg);
+            border-bottom: 1px solid var(--border-color);
             z-index: 1000;
         }
 
         .logo {
             font-size: 1.8rem;
             font-weight: 900;
-            color: var(--primary-color);
+            color: var(--logo-color);
             text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
         }
 
         .nav-links a {
             color: var(--text-color);
             text-decoration: none;
-            margin: 0 15px;
             font-weight: 700;
             font-size: 1.1rem;
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
+            color: var(--logo-color);
         }
 
-        .controls button {
-            background: none;
-            border: none;
+        /* أزرار الهيدر (الترجمة والثيم) */
+        .controls {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
             color: var(--text-color);
-            font-size: 1.2rem;
+            padding: 8px 16px;
+            border-radius: 8px;
             cursor: pointer;
-            margin-right: 15px;
+            font-size: 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .controls button:hover {
-            color: var(--primary-color);
+        .header-btn i {
+            color: #fbbf24; /* لون الشمس الأصفر */
         }
 
-        /* خلفية الفيديو */
+        .header-btn:hover {
+            border-color: var(--text-color);
+        }
+
+        /* الفيديو في الخلفية */
         .video-container {
             position: absolute;
             top: 0;
@@ -114,7 +136,7 @@
             background: var(--overlay-color);
         }
 
-        /* المحتوى الرئيسي (Hero Section) */
+        /* محتوى الصفحة الرئيسية */
         .hero-content {
             height: 100vh;
             display: flex;
@@ -128,80 +150,84 @@
         }
 
         .hero-content h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 20px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--title-color);
+            font-weight: 900;
         }
 
         .hero-content p {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 40px;
-            max-width: 800px;
+            max-width: 700px;
             line-height: 1.6;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
-        /* الأزرار */
+        /* أزرار الخدمات في المنتصف */
         .buttons-container {
             display: flex;
             gap: 20px;
         }
 
-        .btn {
-            padding: 15px 40px;
-            font-size: 1.2rem;
+        .main-btn {
+            padding: 12px 35px;
+            font-size: 1.1rem;
             font-weight: 700;
-            border-radius: 30px;
+            border-radius: 8px;
             text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             align-items: center;
             gap: 10px;
+            transition: 0.3s;
         }
 
-        .btn-primary {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        .btn-fill {
+            background: var(--logo-color);
             color: #fff;
-            border: none;
+            border: 1px solid var(--logo-color);
+        }
+
+        .btn-fill:hover {
+            background: var(--title-color);
+            border-color: var(--title-color);
         }
 
         .btn-outline {
             background: transparent;
             color: var(--text-color);
-            border: 2px solid var(--primary-color);
+            border: 1px solid var(--border-color);
         }
 
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
+        .btn-outline:hover {
+            border-color: var(--logo-color);
+            color: var(--logo-color);
         }
 
-        /* الموبايل */
         @media (max-width: 768px) {
-            header { padding: 15px 20px; flex-wrap: wrap; }
-            .nav-links { display: none; } /* يمكن إضافة قائمة هامبرغر لاحقاً */
+            header { padding: 15px 20px; flex-wrap: wrap; justify-content: center; gap: 15px; }
+            .nav-links { width: 100%; justify-content: center; margin-bottom: 10px; }
             .hero-content h1 { font-size: 2.5rem; }
-            .hero-content p { font-size: 1.1rem; }
             .buttons-container { flex-direction: column; width: 100%; max-width: 300px; }
-            .btn { width: 100%; justify-content: center; }
+            .main-btn { justify-content: center; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="index.html" class="logo">R2Learn</a>
+        <a href="index.html" class="logo">R2 AI</a>
         <nav class="nav-links">
-            <a href="index.html" data-i18n="nav_home">الرئيسية</a>
-            <a href="prompt.html" data-i18n="nav_prompts">مكتبة البرومبتات</a>
-            <a href="blog.html" data-i18n="nav_tools">أدوات الذكاء الاصطناعي</a>
-            <a href="about.html" data-i18n="nav_about">عن الموقع</a>
+            <a href="index.html" data-i18n="nav_home">Home</a>
+            <a href="about.html" data-i18n="nav_about">About Us</a>
+            <a href="privacy.html" data-i18n="nav_privacy">Privacy Policy</a>
         </nav>
         <div class="controls">
-            <button id="lang-toggle" onclick="toggleLanguage()"><i class="fas fa-globe"></i> <span id="lang-text">EN</span></button>
-            <button id="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+            <button class="header-btn" id="theme-toggle" onclick="toggleTheme()">
+                <i class="fas fa-sun"></i> <span id="theme-text" data-i18n="theme_light">Light</span>
+            </button>
+            <button class="header-btn" id="lang-toggle" onclick="toggleLanguage()">
+                <span id="lang-text">العربية</span>
+            </button>
         </div>
     </header>
 
@@ -212,84 +238,84 @@
     </div>
 
     <main class="hero-content">
-        <h1 data-i18n="hero_title">اكتشف قوة الذكاء الاصطناعي</h1>
-        <p data-i18n="hero_desc">بوابتك الشاملة لأفضل البرومبتات وأقوى أدوات الذكاء الاصطناعي المجانية التي ستضاعف إنتاجيتك وتختصر وقتك.</p>
+        <h1 data-i18n="hero_title">R2 AI Platform</h1>
+        <p data-i18n="hero_desc">Your ultimate hub for AI prompts and powerful free tools. Boost your creativity and productivity instantly.</p>
         
         <div class="buttons-container">
-            <a href="prompt.html" class="btn btn-primary">
-                <i class="fas fa-terminal"></i> <span data-i18n="btn_prompts">تصفح البرومبتات</span>
+            <a href="prompt.html" class="main-btn btn-fill">
+                <i class="fas fa-terminal"></i> <span data-i18n="btn_prompts">Prompts Library</span>
             </a>
-            <a href="blog.html" class="btn btn-outline">
-                <i class="fas fa-magic"></i> <span data-i18n="btn_tools">أفضل الأدوات المجانية</span>
+            <a href="blog.html" class="main-btn btn-outline">
+                <i class="fas fa-magic"></i> <span data-i18n="btn_tools">Free AI Tools</span>
             </a>
         </div>
     </main>
 
     <script>
-        // 1. نظام تشغيل فيديو عشوائي
+        // 1. تشغيل فيديو عشوائي
         const videos = [
-            // ضع روابط فيديوهات قصيرة تعبر عن الذكاء الاصطناعي هنا (روابط مباشرة mp4)
-            "https://cdn.pixabay.com/video/2023/10/22/186105-877134005_large.mp4", // فيديو مثال 1
-            "https://cdn.pixabay.com/video/2023/08/24/177436-857321590_large.mp4"  // فيديو مثال 2
+            "https://cdn.pixabay.com/video/2023/10/22/186105-877134005_large.mp4",
+            "https://cdn.pixabay.com/video/2023/08/24/177436-857321590_large.mp4"
         ];
-        
-        const videoElement = document.getElementById('bg-video');
-        const randomVideo = videos[Math.floor(Math.random() * videos.length)];
-        videoElement.src = randomVideo;
+        document.getElementById('bg-video').src = videos[Math.floor(Math.random() * videos.length)];
 
         // 2. نظام الثيمات (Dark/Light)
-        const themeToggleBtn = document.getElementById('theme-toggle');
         const htmlElement = document.documentElement;
-
-        // التحقق من الثيم المحفوظ
+        const themeIcon = document.querySelector('#theme-toggle i');
+        
         if(localStorage.getItem('theme') === 'light') {
             htmlElement.setAttribute('data-theme', 'light');
-            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+            themeIcon.className = 'fas fa-moon';
         }
 
         function toggleTheme() {
-            if (htmlElement.getAttribute('data-theme') === 'dark') {
-                htmlElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-            } else {
-                htmlElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-            }
+            const isDark = htmlElement.getAttribute('data-theme') === 'dark';
+            const newTheme = isDark ? 'light' : 'dark';
+            
+            htmlElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            themeIcon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+            
+            // تحديث نص زر الثيم حسب اللغة الحالية
+            const currentLang = localStorage.getItem('lang') || 'en';
+            const textKey = newTheme === 'light' ? 'theme_dark' : 'theme_light';
+            document.getElementById('theme-text').innerText = translations[currentLang][textKey];
         }
 
-        // 3. نظام الترجمة المدمج (العربية / الإنجليزية)
+        // 3. نظام الترجمة (الافتراضي إنجليزي)
         const translations = {
-            ar: {
-                nav_home: "الرئيسية",
-                nav_prompts: "مكتبة البرومبتات",
-                nav_tools: "أدوات الذكاء الاصطناعي",
-                nav_about: "عن الموقع",
-                hero_title: "اكتشف قوة الذكاء الاصطناعي",
-                hero_desc: "بوابتك الشاملة لأفضل البرومبتات وأقوى أدوات الذكاء الاصطناعي المجانية التي ستضاعف إنتاجيتك وتختصر وقتك.",
-                btn_prompts: "تصفح البرومبتات",
-                btn_tools: "أفضل الأدوات المجانية",
-                lang_btn: "EN"
-            },
             en: {
                 nav_home: "Home",
-                nav_prompts: "Prompts Library",
-                nav_tools: "AI Tools",
-                nav_about: "About",
-                hero_title: "Discover the Power of AI",
-                hero_desc: "Your comprehensive gateway to the best prompts and free AI tools that will multiply your productivity.",
-                btn_prompts: "Browse Prompts",
-                btn_tools: "Best Free Tools",
-                lang_btn: "AR"
+                nav_about: "About Us",
+                nav_privacy: "Privacy Policy",
+                theme_light: "Light",
+                theme_dark: "Dark",
+                lang_btn: "العربية",
+                hero_title: "R2 AI Platform",
+                hero_desc: "Your ultimate hub for AI prompts and powerful free tools. Boost your creativity and productivity instantly.",
+                btn_prompts: "Prompts Library",
+                btn_tools: "Free AI Tools"
+            },
+            ar: {
+                nav_home: "الرئيسية",
+                nav_about: "عن الموقع",
+                nav_privacy: "سياسة الخصوصية",
+                theme_light: "فاتح",
+                theme_dark: "داكن",
+                lang_btn: "English",
+                hero_title: "منصة R2 للذكاء الاصطناعي",
+                hero_desc: "بوابتك الشاملة لأفضل البرومبتات وأقوى أدوات الذكاء الاصطناعي المجانية التي ستضاعف إنتاجيتك وتختصر وقتك.",
+                btn_prompts: "مكتبة البرومبتات",
+                btn_tools: "أفضل الأدوات المجانية"
             }
         };
 
-        let currentLang = localStorage.getItem('lang') || 'ar';
+        let currentLang = localStorage.getItem('lang') || 'en';
         applyTranslation(currentLang);
 
         function toggleLanguage() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
             localStorage.setItem('lang', currentLang);
             applyTranslation(currentLang);
         }
@@ -304,7 +330,13 @@
                     element.innerText = translations[lang][key];
                 }
             });
+            
             document.getElementById('lang-text').innerText = translations[lang].lang_btn;
+            
+            // تحديث نص الثيم بناءً على الحالة الحالية
+            const currentTheme = htmlElement.getAttribute('data-theme');
+            const themeKey = currentTheme === 'dark' ? 'theme_light' : 'theme_dark';
+            document.getElementById('theme-text').innerText = translations[lang][themeKey];
         }
     </script>
 </body>
