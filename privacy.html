@@ -175,7 +175,41 @@
             .section-title { font-size: 2rem; }
             .content-body { padding: 1.5rem; }
         }
-    
+            .r2-official-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--accent-color) !important; /* اللون الأزرق الهادئ */
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        
+        .r2-official-link i {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        
+        .r2-official-link:hover {
+            background-color: var(--accent-color);
+            color: #ffffff !important;
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+        
+        /* لضمان التناسق في الموبايل */
+        @media (max-width: 768px) {
+            .r2-official-link {
+                padding: 5px 10px;
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -185,6 +219,11 @@
             <a href="index.html" data-lang="home">Home</a>
             <a href="about.html" data-lang="about">About Us</a>
             <a href="privacy.html" data-lang="privacy">Privacy Policy</a>
+            
+            <a href="https://www.r2learn.com" target="_blank" class="r2-official-link">
+            <i class="fas fa-external-link-alt"></i>
+            <span data-i18n="nav_official">Official Website</span>
+            </a>
        
         </nav>
         <div class="controls">
@@ -293,4 +332,5 @@
 </body>
 
 </html>
+
 
