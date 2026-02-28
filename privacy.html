@@ -178,7 +178,7 @@
 
 
         
-        .nav-item-link {
+         .weblink {
             text-decoration: none;
             color: var(--text-color); /* نفس لون باقي اللينكات */
             font-weight: 700;
@@ -188,20 +188,18 @@
             gap: 7px;
             transition: color 0.3s ease;
         }
+       
         
-        .nav-item-link i {
-            font-size: 0.9rem;
-            opacity: 0.7; /* أيقونة هادئة وغير مزعجة */
-        }
-        
-        .nav-item-link:hover {
+        .weblink:hover {
             color: var(--accent-color); /* يتحول للأزرق الهادئ عند التمرير فقط */
         }
         
-        .nav-item-link:hover i {
+        .weblink:hover i {
             opacity: 1;
             color: var(--accent-color);
         }        
+    
+
                 
                
     </style>
@@ -214,8 +212,8 @@
             <a href="about.html" data-lang="about">About </a>
             <a href="privacy.html" data-lang="privacy">Privacy </a>
             
-            <a href="https://www.r2learn.com" target="_blank" class="nav-item-link">
-           <i class="fa-solid fa-link"></i> <span data-i18n="nav_official">Our Website</span>
+             <a href="https://r2-beige.vercel.app/" target="_blank" class="weblink">
+            <span data-i18n="nav_official">Our Website</span>
             </a>
        
         </nav>
@@ -247,7 +245,7 @@
         </div>
     </main>
 
-    <footer><p>&copy; All rights reserved | powered by <strong data-lang="footer_r2">R2</strong></p></footer>
+    <footer><p>&copy; All rights reserved |  <strong data-lang="footer_r2">powered by R2</strong></p></footer>
 
     <script>
         const translations = {
@@ -325,6 +323,7 @@
 </body>
 
 </html>
+
 
 
 
