@@ -219,7 +219,34 @@
             .controls { width: 100%; justify-content: center;
             margin-top: 10px;}
         }
-      
+
+          .weblink {
+            text-decoration: none;
+            color: var(--text-color); /* نفس لون باقي اللينكات */
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            transition: color 0.3s ease;
+        }
+       
+        
+        .weblink:hover {
+            color: var(--accent-color); /* يتحول للأزرق الهادئ عند التمرير فقط */
+        }
+        
+        .weblink:hover i {
+            opacity: 1;
+            color: var(--accent-color);
+        }        
+    
+
+
+
+
+
+        
  </style>
 </head>
 <body>
@@ -230,7 +257,12 @@
             <a href="index.html" data-lang="home">Home</a>
             <a href="about.html" data-lang="about">About Us</a>
             <a href="privacy.html" data-lang="privacy">Privacy Policy</a>
-            <!-- <a href="https://r2-beige.vercel.app/" target="_blank" data-lang="company">R2 Website</a> -->
+
+             <a href="https://r2-beige.vercel.app/" target="_blank" class="weblink">
+             <span data-i18n="nav_official">Our Website</span>
+             </a>
+       
+
         </nav>
         <div class="controls">
             <button id="theme-toggle" title="Switch Theme">☀️ Light</button>
@@ -811,6 +843,7 @@ beauty lighting, smooth skin, anime look, face changes
     </script>
 </body>
 </html>
+
 
 
 
