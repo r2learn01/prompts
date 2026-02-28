@@ -51,21 +51,30 @@
         } */
 
             :root {
-            --bg-color: #0f0f13;
-            --text-color: #ffffff;
-            --primary-btn: linear-gradient(45deg, #00d2ff, #3a7bd5); /* تدرج سماوي وأزرق */
+            /* الثيم الداكن الهادئ (Dark Mode) */
+            --bg-color: #1a1c23;          /* رمادي داكن مائل للأزرق بدلاً من الأسود الحاد */
+            --text-color: #e2e8f0;        /* أبيض مطفي (Off-white) يقلل من إجهاد العين */
+            
+            /* تدرج أزرار أهدأ (Muted Gradient) */
+            --primary-btn: linear-gradient(45deg, #3b82f6, #2563eb); 
             --btn-text: #ffffff;
-            --btn-shadow: rgba(0, 210, 255, 0.3);
-            --border-color: rgba(255, 255, 255, 0.1);
+            
+            /* ظل خفيف جداً وغير مشتت */
+            --btn-shadow: rgba(59, 130, 246, 0.15);
+            --border-color: rgba(255, 255, 255, 0.05);
         }
         
         [data-theme="light"] {
-            --bg-color: #f4f4f9;
-            --text-color: #1a1a1a;
-            --primary-btn: linear-gradient(45deg, #0078d7, #00b4d8);
+            /* الثيم الفاتح الهادئ (Light Mode) */
+            --bg-color: #f8fafc;          /* لون "ثلجي" مريح جداً للعين */
+            --text-color: #334155;        /* رمادي غامق بدلاً من الأسود الصريح */
+            
+            /* تدرج فاتح بلمسة زرقاء ناعمة */
+            --primary-btn: linear-gradient(45deg, #60a5fa, #3b82f6);
             --btn-text: #ffffff;
-            --btn-shadow: rgba(0, 120, 215, 0.2);
-            --border-color: rgba(0, 0, 0, 0.1);
+            
+            --btn-shadow: rgba(0, 0, 0, 0.05);
+            --border-color: rgba(0, 0, 0, 0.05);
         }
         
 
@@ -828,6 +837,7 @@ beauty lighting, smooth skin, anime look, face changes
     </script>
 </body>
 </html>
+
 
 
 
