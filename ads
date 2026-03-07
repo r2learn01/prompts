@@ -4,3 +4,7 @@ pobcash:
 adsterra:
          user: r2learn01
          pass: Hazem_0101
+
+Hilltop ads:
+         google
+         Hazem_0101
