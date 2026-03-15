@@ -5,6 +5,6 @@ adsterra:
          user: r2learn01
          pass: Hazem_0101
 
-Hilltop ads:
+monetag ads:
          google
-         Hazem_0101
+         
